@@ -1,23 +1,26 @@
+def create_youtube_video(title, description):
+	IshowSpeed = {"title": title, "description": description, "likes": 0, "dislikes": 0, "comments":{}}
+	return IshowSpeed
+
 title = input("What is your title? ")
 description = input("what is your youtube video description? ")
-num = 0
-num1 = 0
-def create_youtube_video(title, description):
-	IshowSpeed = {"title": title, "description": description, "likes": num, "dislikes": num1, comments:{}}
-	return IshowSpeed
+
 
 new_youtube_video = create_youtube_video(title, description)
 print(new_youtube_video)
 
-def dislike(num1):
-	num1 = num1 + 1
-	return num1
+def dislike(IshowSpeed):
+	IshowSpeed["likes"] += 1
+	return IshowSpeed
 
-def add_comment(comments):
-	comments = {"username": comment_text}
+def add_comment(IshowSpeed):
+	username = input("what is your name?")
 	comment_text = input("pls give a comment")
-	return comments
+	IshowSpeed["comments"][username] = comment_text
+	return IshowSpeed
 
-def add_likes(num):
-	num = num + 495
-	return num
+def add_likes(IshowSpeed):
+	IshowSpeed["likes"] += 1
+	return IshowSpeed
+
+print(IshowSpeed)
